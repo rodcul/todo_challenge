@@ -1,17 +1,35 @@
 <!doctype html>
-<html lang="en" ng-app = "ToDoListController as toDoCtrl">
-  <head>
-    <meta charset="utf-8">
-    <title>To Do List Challenge</title>
-    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
-    <script src="bower_components/jquery/dist/jquery.js"></script>
-    <script src="bower_components/angular/angular.js"></script>
-    <script src="bower_components/angular-resource/angular-resource.js"></script>
-    <script src="js/app.js"></script>
-    <script src="js/ToDoEngine.js"></script>
-  </head>
+<html lang="en" ng-app="ToDoList">
 
-  <body>
-<h1>To do challenge</h1>
-  </body>
+<head>
+	<meta charset="utf-8">
+	<title>To Do List Challenge</title>
+	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+	<script src="bower_components/jquery/dist/jquery.js"></script>
+	<script src="bower_components/angular/angular.js"></script>
+	<script src="bower_components/angular-resource/angular-resource.js"></script>
+	<script src="js/app.js"></script>
+	<script src="js/ToDoEngine.js"></script>
+	<script src="js/toDoListController.js"></script>
+</head>
+
+<body ng-controller = "ToDoListController as toDoCtrl">
+	<h1>To do list</h1>
+
+  <form class="form-inline">
+  <div class="form-group">
+    <label class="sr-only">To do:</label>
+    <input type="text" class="form-control" id="todo" placeholder="Enter to do">
+  </div>
+  <button type="submit" class="btn btn-default">Add</button>
+</form>
+
+  <ul ng-repeat="toDo in toDoCtrl.toDos">
+    <li>
+      {{toDo}}
+    </li>
+  </ul>
+
+</body>
+
 </html>

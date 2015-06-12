@@ -12,6 +12,9 @@ describe('ToDoListController', function() {
 	});
 
 	it('shows a list of tasks', function() {
+    var toDos = ['Learn AngularJS','Learn Protractor', 'Get Travis CI working'];
+
+    expect(ctrl.toDos).toEqual(toDos);
 
 	});
 });
