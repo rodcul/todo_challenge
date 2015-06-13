@@ -1,12 +1,17 @@
 describe('To Do List', function(){
-  it('has a title', function(){
+
+  beforeEach(function(){
     browser.get('http://localhost:8000');
+
+  });
+
+
+  it('has a title', function(){
     expect(browser.getTitle()).toEqual('To Do List Challenge');
   });
 
 
   it('Add a to do', function() {
-    browser.get('http://localhost:8000');
     element(by.model('todoList.todoText')).sendKeys('Install Travis');
     element(by.className('btn')).click();
     expect(element(by.binding('todo.text')).getText()).
@@ -14,7 +19,6 @@ describe('To Do List', function(){
   });
 
   xit('Complete a to do', function(){
-    browser.get('http://localhost:8000');
     element(by.model('todoList.todoText')).sendKeys('Install Travis');
     element(by.className('btn')).click();
     element(by.model('todoList.done')) = true;

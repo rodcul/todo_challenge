@@ -27,7 +27,7 @@
 				<div>
 					<a href="#" ng-click="myFilter = {done: false}">Active</a> |
 					<a href="#" ng-click="myFilter = {done: true}">Complete</a> |
-					<a href="#" ng-click="myFilter = undefined">All</a>
+					<a href="#" ng-click="myFilter = undefined">All ({{todoList.todos.length}})</a>
 				</div>
 				<form class="form-inline" ng-submit="todoList.addTodo(todoList.todoText)">
 					<div class="form-group">
