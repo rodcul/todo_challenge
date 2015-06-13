@@ -22,7 +22,7 @@
 				<h3 class="panel-title">To do list</h3>
 			</div>
 			<div class="panel-body" ng-controller="ToDoListController as todoList">
-				<form class="form-inline" ng-submit="todoList.addTodo()">
+				<form class="form-inline" ng-submit="todoList.addTodo(todoList.todoText)">
 					<div class="form-group">
 						<input type="text" class="form-control" ng-model="todoList.todoText">
 					</div class="col-xs-6 col-md-1">

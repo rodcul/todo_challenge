@@ -12,13 +12,12 @@ describe('ToDoListController', function() {
 	});
 
 	it('shows a list of tasks', function() {
-    var toDos = [{text:'Learn AngularJS', done: false},
+    var tasks = [{text:'Learn AngularJS', done: false},
 									{text:'Learn Protractor', done: false},
 									{text: 'Get Travis CI working', done: false}];
 		ctrl.addTodo('Get Travis CI working');
 		ctrl.addTodo('Learn Protractor');
 		ctrl.addTodo('Learn AngularJS');
-    expect(ctrl.todos).toEqual(toDos);
-
+    expect(ctrl.todos).toEqual(tasks);
 	});
 });

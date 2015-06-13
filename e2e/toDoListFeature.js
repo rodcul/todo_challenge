@@ -13,7 +13,7 @@ describe('To Do List', function(){
         toEqual('Install Travis');
   });
 
-  it('Complete a to do', function(){
+  xit('Complete a to do', function(){
     browser.get('http://localhost:8000');
     element(by.model('todoList.todoText')).sendKeys('Install Travis');
     element(by.className('btn')).click();
