@@ -25,9 +25,12 @@
 
 			<div class="panel-body" ng-controller="ToDoListController as todoList">
 				<div>
-					<a href="#" ng-click="myFilter = {done: false}">Active</a> |
+					Filter by: <a href="#" ng-click="myFilter = {done: false}">Active</a> |
 					<a href="#" ng-click="myFilter = {done: true}">Complete</a> |
 					<a href="#" ng-click="myFilter = undefined">All ({{todoList.todos.length}})</a>
+				</div>
+				<div>
+					Hide completed: <a href="#" ng-click="todoList.archive()">archive</a>
 				</div>
 				<form class="form-inline" ng-submit="todoList.addTodo(todoList.todoText)">
 					<div class="form-group">

@@ -5,13 +5,16 @@ todoApp.controller('ToDoListController', [function() {
 								{text:'Learn Protractor', done: false},
 								{text: 'Get Travis CI working', done: true}];
 
-	self.filter =
 
 	self.addTodo = function(task) {
 		self.todos.unshift({text: task, done:false});
 		self.todoText = '';
 		console.log(self.todos);
 
+	};
+
+	self.archive = function () {
+		self.todos = self.todos.filter(function(todo){return todo['done'] == false});
 	};
 
 }]);
