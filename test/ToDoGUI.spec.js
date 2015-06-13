@@ -1,5 +1,5 @@
 describe('ToDoListController', function() {
-	beforeEach(module('ToDoList'));
+	beforeEach(module('todoApp'));
 
 	var ctrl;
 
@@ -8,13 +8,13 @@ describe('ToDoListController', function() {
 	}));
 
 	it('initialises with an empty list', function() {
-		expect(ctrl.toDos).toBeUndefined();
+		expect([ctrl.todos]).toBeUndefined();
 	});
 
 	it('shows a list of tasks', function() {
     var toDos = ['Learn AngularJS','Learn Protractor', 'Get Travis CI working'];
 
-    expect(ctrl.toDos).toEqual(toDos);
+    expect(ctrl.todos).toEqual(toDos);
 
 	});
 });

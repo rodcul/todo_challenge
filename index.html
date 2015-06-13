@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" ng-app="ToDoList">
+<html lang="en" ng-app="todoApp">
 
 <head>
 	<meta charset="utf-8">
@@ -13,22 +13,25 @@
 	<script src="js/toDoListController.js"></script>
 </head>
 
-<body ng-controller = "ToDoListController as toDoCtrl">
-	<h1>To do list</h1>
+<body>
+	<div ng-controller="ToDoListController as todoList">
 
-  <form class="form-inline">
-  <div class="form-group">
-    <label class="sr-only">To do:</label>
-    <input type="text" class="form-control" id="todo" placeholder="Enter to do">
-  </div>
-  <button type="submit" class="btn btn-default">Add</button>
-</form>
+		<h1>To do list</h1>
 
-  <ul ng-repeat="toDo in toDoCtrl.toDos">
-    <li>
-      {{toDo}}
-    </li>
-  </ul>
+		<form class="form-inline" ng-submit="todoList.addTodo()">
+			<div class="form-group">
+				<label class="sr-only">To do:</label>
+				<input type="text" class="form-control" ng-model="todoList.todoText">
+			</div>
+			<button type="submit" class="btn btn-default" value="add">Add</button>
+		</form>
+
+		<ul ng-repeat="todo in todoList.todos">
+			<li>
+				{{todo}}
+			</li>
+		</ul>
+	</div>
 
 </body>
 

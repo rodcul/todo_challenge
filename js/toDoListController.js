@@ -1,7 +1,12 @@
-toDoList.controller('ToDoListController', [function() {
+todoApp.controller('ToDoListController', [function() {
 
-  var self = this;
+	var self = this;
+	self.todos = [];
 
-  self.toDos = ['Learn AngularJS','Learn Protractor', 'Get Travis CI working'];
+	self.addTodo = function() {
+		self.todos.unshift(self.todoText);
+		self.todoText = '';
+
+	};
 
 }]);
