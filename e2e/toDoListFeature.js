@@ -5,14 +5,20 @@ describe('To Do List', function(){
   });
 
 
-  it('finds profiles', function() {
+  it('Add a to do', function() {
     browser.get('http://localhost:8000');
-    
-
     element(by.model('todoList.todoText')).sendKeys('Install Travis');
     element(by.className('btn')).click();
-
-    expect(element(by.binding('todo')).getText()).
+    expect(element(by.binding('todo.text')).getText()).
         toEqual('Install Travis');
   });
+
+  it('Complete a to do', function(){
+    browser.get('http://localhost:8000');
+    element(by.model('todoList.todoText')).sendKeys('Install Travis');
+    element(by.className('btn')).click();
+    element(by.model('todoList.done')) = true;
+    expect( element('input[ng-model="todoList.done"]').attr('checked') ).toBeTruthy();
+  });
+
 });

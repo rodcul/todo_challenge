@@ -8,12 +8,16 @@ describe('ToDoListController', function() {
 	}));
 
 	it('initialises with an empty list', function() {
-		expect([ctrl.todos]).toBeUndefined();
+		expect(ctrl.todos).toEqual([]);
 	});
 
 	it('shows a list of tasks', function() {
-    var toDos = ['Learn AngularJS','Learn Protractor', 'Get Travis CI working'];
-
+    var toDos = [{text:'Learn AngularJS', done: false},
+									{text:'Learn Protractor', done: false},
+									{text: 'Get Travis CI working', done: false}];
+		ctrl.addTodo('Get Travis CI working');
+		ctrl.addTodo('Learn Protractor');
+		ctrl.addTodo('Learn AngularJS');
     expect(ctrl.todos).toEqual(toDos);
 
 	});
