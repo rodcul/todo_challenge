@@ -14,24 +14,34 @@
 </head>
 
 <body>
-	<div ng-controller="ToDoListController as todoList">
 
-		<h1>To do list</h1>
 
-		<form class="form-inline" ng-submit="todoList.addTodo()">
-			<div class="form-group">
-				<label class="sr-only">To do:</label>
-				<input type="text" class="form-control" ng-model="todoList.todoText">
+	<div class="col-md-3 col-md-offset-4"  style="padding-top:50px;">
+
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h3 class="panel-title">To do list</h3>
 			</div>
-			<button type="submit" class="btn btn-default" value="add">Add</button>
-		</form>
+			<div class="panel-body" ng-controller="ToDoListController as todoList">
+				<form class="form-inline" ng-submit="todoList.addTodo()">
+					<div class="form-group">
+						<input type="text" class="form-control" ng-model="todoList.todoText">
+					</div class="col-xs-6 col-md-1">
+					<button type="submit" class="btn btn-default" value="add">Add</button>
+				</form>
 
-		<ul ng-repeat="todo in todoList.todos">
-			<li>
-				{{todo}}
-			</li>
-		</ul>
+				<div class="checkbox" ng-repeat="todo in todoList.todos">
+					<label>
+						<input type="checkbox" value="">{{todo}}
+					</label>
+				</div>
+
+
+			</div>
+		</div>
 	</div>
+
+
 
 </body>
 
